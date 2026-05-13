@@ -33,6 +33,6 @@ jobs:
 
     # Stage 3: done with test fail or pass result
     # The 'if: always()' ensures this step runs even if the previous Maven command fails due to a failing test.
-    - name: Stage 3 - Print Result
-      if: always()
-      run: echo "Done with test. Result: ${{ job.status }}"
+#    - name: Stage 3 - Print Result
+#      if: always()
+#      run: echo Done with test. Result: ${{ job.status }}

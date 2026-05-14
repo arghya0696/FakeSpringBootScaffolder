@@ -31,8 +31,12 @@ jobs:
     - name: Stage 2 - Run Maven Clean Install
       run: mvn clean install
 
+    - name: Stage 3 - Run Maven Test
+      run: mvn test
+
     # Stage 3: done with test fail or pass result
     # The 'if: always()' ensures this step runs even if the previous Maven command fails due to a failing test.
-#    - name: Stage 3 - Print Result
-#      if: always()
-#      run: echo Done with test. Result: ${{ job.status }}
+    - name: Stage 4 - Print Result
+      if: always()
+      run: | 
+        echo Done with test. Result: ${{ job.status }}
